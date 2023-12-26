@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CustomInput from '../components/CustomInput'
 import LoginButton from '../components/LoginButton'
 import SubButton from '../components/SubButton'
@@ -40,7 +40,7 @@ function SignUpPage() {
         setLoading(true);
         signInWithPopup(auth, provider)
             .then(() => {
-                navigate("/profile", { replace: true });
+                navigate("/addnewbook", { replace: true });
             })
             .catch((error) => {
                 alert(error.message)

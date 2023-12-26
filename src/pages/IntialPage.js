@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import bg1 from "../assets/blob-scene-haikei.svg"
 import Loading from '../lottie/Loading'
 import auth from '../firebase'
@@ -13,7 +13,7 @@ function IntialPage() {
         onAuthStateChanged(auth, (user) => {
             setTimeout(() => {
                 if (user) {
-                    navigate("/profile", { replace: true });
+                    navigate("/addnewbook", { replace: true });
                 }
                 else {
                     navigate("/signup", { replace: true });

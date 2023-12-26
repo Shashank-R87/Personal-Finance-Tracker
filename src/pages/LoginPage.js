@@ -6,7 +6,7 @@ import SubButton from '../components/SubButton'
 import SigninwithGoogle from '../components/SigninwithGoogle'
 import Loading from "../lottie/Loading"
 import { useNavigate } from 'react-router-dom'
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import auth from '../firebase'
 
 function LoginPage() {
@@ -16,13 +16,13 @@ function LoginPage() {
 	const provider = new GoogleAuthProvider();
 
 	const [loading, setLoading] = useState(false);
-	const [userDetails, setUserDetails] = useState({ name: "", email: "", password: "" });
+	const [userDetails, setUserDetails] = useState({ email: "", password: "" });
 
 	const login = () => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, userDetails.email, userDetails.password)
 			.then(() => {
-				navigate("/profile", { replace: true });
+				navigate("/addnewbook", { replace: true });
 			})
 			.catch((error) => {
 				alert(error.message)
@@ -50,8 +50,8 @@ function LoginPage() {
 					<Loading />
 					:
 					<div style={{ width: 500, borderRadius: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10, backgroundColor: "#F9F6EE", flexDirection: 'column', padding: 30, boxShadow: "10px 10px 100px rgb(0,0,0,0.30)" }}>
-						<CustomInput type={'email'} placeholder={"Email"} />
-						<CustomInput type={"password"} placeholder={"Password"} />
+						<CustomInput onChange={(e) => { setUserDetails({ ...userDetails, email: e.target.value }) }} type={'email'} placeholder={"Email"} />
+						<CustomInput onChange={(e) => { setUserDetails({ ...userDetails, password: e.target.value }) }} type={"password"} placeholder={"Password"} />
 						<LoginButton content={"Login"} onClick={() => { login() }} />
 						<div style={{ width: "95%", display: "flex", justifyContent: "space-between", alignItems: 'center', padding: 10 }}>
 							<h1 style={{ fontSize: 18, fontWeight: 400 }}>Don't have an account?</h1>
