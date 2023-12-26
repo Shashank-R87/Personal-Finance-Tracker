@@ -4,7 +4,7 @@ import loading from "../assets/loading.json"
 
 function Loading() {
   return (
-    <Lottie animationData={loading} loop={true} />
+    <Lottie style={{width: 500, height: 500}} animationData={loading} loop={true} />
   )
 }
 
