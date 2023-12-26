@@ -19,28 +19,62 @@ body {
   font-size: 18;
 }
 
-.inputStyle{
+.inputStyle {
   font-size: 18px;
   outline: none;
   border: 2px solid #ededed;
   transition: all 300ms ease-in-out;
 }
 
-.inputStyle:focus{
+.inputStyle:focus {
   outline: none;
-  border: 2px solid black ;
+  border: 2px solid black;
 }
 
-.buttonStyle{
+.buttonStyle {
   transition: all 100ms ease-in-out;
   cursor: pointer;
   font-size: 18px;
 }
 
-.buttonStyle:hover{
+.buttonStyle:hover {
   transform: scale(100.5%);
 }
 
-.buttonStyle:active{
+.buttonStyle:active {
   transform: scale(100%);
+}
+
+.NavBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+}
+
+.NavBarButtonStyle:hover {
+  transform: translateY(-10%);
+}
+
+@keyframes lineexpand {
+	from{
+		width: 0%;
+	}
+	to{
+		width: 100%;
+	}
+}
+
+.NavBarButtonStyle:hover::after {
+  content: " ";
+  height: 2px;
+  border-radius: 100px;
+  background: rgb(246, 193, 17);
+  display: flex;
+  animation: lineexpand;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  position: absolute;
+  top: 28px
 }

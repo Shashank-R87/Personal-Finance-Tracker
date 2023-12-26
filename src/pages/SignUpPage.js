@@ -23,7 +23,7 @@ function SignUpPage() {
             .then(() => {
                 updateProfile(auth.currentUser, { displayName: userDetails.name })
                     .then(() => {
-                        navigate("/dashboard", { replace: true });
+                        navigate("/profile", { replace: true });
                     })
                     .catch((error) => {
                         alert(error.message);
@@ -40,7 +40,7 @@ function SignUpPage() {
         setLoading(true);
         signInWithPopup(auth, provider)
             .then(() => {
-                navigate("/dashboard", { replace: true });
+                navigate("/profile", { replace: true });
             })
             .catch((error) => {
                 alert(error.message)
