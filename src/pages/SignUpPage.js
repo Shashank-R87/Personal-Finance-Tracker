@@ -23,7 +23,7 @@ function SignUpPage() {
             .then(() => {
                 updateProfile(auth.currentUser, { displayName: userDetails.name })
                     .then(() => {
-                        navigate("/profile", { replace: true });
+                        navigate("/dasboard", { replace: true });
                     })
                     .catch((error) => {
                         alert(error.message);
@@ -40,7 +40,7 @@ function SignUpPage() {
         setLoading(true);
         signInWithPopup(auth, provider)
             .then(() => {
-                navigate("/addnewbook", { replace: true });
+                navigate("/dasboard", { replace: true });
             })
             .catch((error) => {
                 alert(error.message)
@@ -55,9 +55,9 @@ function SignUpPage() {
                     <Loading />
                     :
                     <div style={{ width: 500, borderRadius: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10, backgroundColor: "#F9F6EE", flexDirection: 'column', padding: 30, boxShadow: "10px 10px 100px rgb(0,0,0,0.30)" }}>
-                        <CustomInput onChange={(e) => { setUserDetails({ ...userDetails, name: e.target.value }) }} type={"text"} placeholder={"Full Name"} />
-                        <CustomInput onChange={(e) => { setUserDetails({ ...userDetails, email: e.target.value }) }} type={"email"} placeholder={"Email"} />
-                        <CustomInput onChange={(e) => { setUserDetails({ ...userDetails, password: e.target.value }) }} type={"password"} placeholder={"Password"} />
+                        <CustomInput width={"95%"} onChange={(e) => { setUserDetails({ ...userDetails, name: e.target.value }) }} type={"text"} placeholder={"Full Name"} />
+                        <CustomInput width={"95%"} onChange={(e) => { setUserDetails({ ...userDetails, email: e.target.value }) }} type={"email"} placeholder={"Email"} />
+                        <CustomInput width={"95%"} onChange={(e) => { setUserDetails({ ...userDetails, password: e.target.value }) }} type={"password"} placeholder={"Password"} />
                         <LoginButton content={"Signup"} onClick={() => { createUser() }} />
                         <div style={{ width: "95%", display: "flex", justifyContent: "space-between", alignItems: 'center', padding: 10 }}>
                             <h1 style={{ fontSize: 18, fontWeight: 400 }}>Already have an account?</h1>

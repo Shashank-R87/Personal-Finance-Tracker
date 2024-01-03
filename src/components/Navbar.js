@@ -12,11 +12,10 @@ function Navbar() {
     }
 
     return (
-        <div className='NavBar' style={{ width: "95%", backgroundColor: 'white', display: "flex", justifyContent: 'space-around', alignItems: "center", borderRadius: 10, padding: "20px 30px 20px 30px" }}>
-            <NavBarButton id={"addnewbook"} content={"Add New Books"} onClick={(e) => { navigateonClick(e.target.id) }} />
+        <div className='NavBar' style={{ width: "95%", backgroundColor: 'white', display: "flex", justifyContent: 'space-around', alignItems: "center", borderRadius: 10, padding: "20px 30px 20px 30px", zIndex: 2 }}>
+            <NavBarButton id={"dashboard"} content={"Dashboard"} onClick={(e) => { navigateonClick(e.target.id) }} />
+            <NavBarButton id={"logs"} content={"Logs"} onClick={(e) => { navigateonClick(e.target.id) }} />
             <NavBarButton id={"profile"} content={"Profile"} onClick={(e) => { navigateonClick(e.target.id) }} />
-            <NavBarButton id={"books"} content={"Books"} onClick={(e) => { navigateonClick(e.target.id) }} />
-            <NavBarButton id={"settings"} content={"Settings"} onClick={(e) => { navigateonClick(e.target.id) }} />
         </div>
     )
 }

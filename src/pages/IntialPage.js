@@ -13,7 +13,7 @@ function IntialPage() {
         onAuthStateChanged(auth, (user) => {
             setTimeout(() => {
                 if (user) {
-                    navigate("/addnewbook", { replace: true });
+                    navigate("/dashboard", { replace: true });
                 }
                 else {
                     navigate("/signup", { replace: true });
