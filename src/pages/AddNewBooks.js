@@ -188,7 +188,7 @@ function AddNewBooks() {
                         </div>
                         <div style={{ backgroundColor: 'white', padding: 30, borderRadius: 10, marginBottom: 0, display: 'flex', gap: 20, flexDirection: "column", gridRowStart: 2 }}>
                             <div style={{ backgroundColor: 'white', padding: 10, display: 'flex', justifyContent: "space-between", alignItems: 'center' }}>
-                                <h1 style={{ fontFamily: "Poppins", fontWeight: 600, fontSize: 38 }}>Your Gloals</h1>
+                                <h1 style={{ fontFamily: "Poppins", fontWeight: 600, fontSize: 38 }}>Your Goals</h1>
                                 <AddButton onClick={() => { setModal(true) }} />
                                 {
                                     Modal ?
