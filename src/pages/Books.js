@@ -51,7 +51,7 @@ function Books() {
                     var a = document.createElement('a');
                     a.href = url;
                     a.download = "Your Logs.csv";
-                    document.body.appendChild(a);
+                    document.body.appendChild(a);   
                     a.click();
                     a.remove();
                 })

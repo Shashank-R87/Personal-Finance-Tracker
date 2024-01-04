@@ -12,7 +12,7 @@ function CreateGoal({ onClick }) {
 
     const set_goal = (goal) => {
         onAuthStateChanged(auth, (user)=>{
-            fetch(`http://localhost:8000/set_goal/${user.uid}`, requestBody(goal))
+            fetch(`https://finance-tracker-api-python.vercel.app/set_goal/${user.uid}`, requestBody(goal))
             .then(res => {
                 if (!res.ok) {
                     return res.json()
